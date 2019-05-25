@@ -1,0 +1,1 @@
+emcc -std=c++11 "main.cpp" -s USE_SDL=2 
