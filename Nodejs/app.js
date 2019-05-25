@@ -1,10 +1,12 @@
 'use strict'
 
 var read = require('readline');
-
+var em = require('./a.out.js');
 
 var main = function () {
-    console.log('Hello world');
+    em.ccall('StartAudio');
+    console.log(em.ccall('GetAmplitude', 'number'));
+    console.log(em._GetAmplitude());
         
     read.createInterface(process.stdin, process.stdout)
         .question("Press [e] to exit...", function (inputData) {
@@ -16,4 +18,6 @@ var main = function () {
         });
 }
 
-main();
+em.onRuntimeInitialized = function () {
+    main();
+}

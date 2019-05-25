@@ -1,1 +1,18 @@
-<script src="a.out.js"></script>
+<!doctype html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">    
+    <title>Hello</title>
+</head>
+<html>
+	<body">
+        <script src="a.out.js"></script>        
+        <script>
+            Module.onRuntimeInitialized = function() {
+                Module.ccall('StartAudio');
+                console.log(Module.ccall('GetAmplitude', 'number'));
+                console.log(Module._GetAmplitude());
+            }
+        </script>
+	</body>
+</html>
